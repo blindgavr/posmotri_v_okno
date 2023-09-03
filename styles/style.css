@@ -16,7 +16,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -50,8 +50,8 @@ ol {
   display: flex;
   align-items: end;
   width: 1140px;
-  height: 534px;
-  gap: 30px;
+  min-height: 534px;
+  gap: 32px;
 }
 
 .result__video-container {
@@ -70,7 +70,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  color: #FFF;
+  color: #fff;
   font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -78,32 +78,32 @@ ol {
 }
 
 .content__list {
-  margin-top: 26px;
+  width: 419px;
+  margin-top: 20px;
   position: relative;
-  max-height: 298px;
+  max-height: 302px;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  padding: 3px; /* чтобы было видно обводку при фокусе */
 }
 
 .content__details {
-  width: 399px;
   height: 100%;
-  gap: 26px;
   align-self: stretch;
-  flex-grow: 1;
 }
 
 .content__list-item {
-  padding-bottom: 30px;
+  padding: 2px 2px 32px 2px; /*чтоб фокус было видно */
 }
 
 .content__video-card {
   display: flex;
-  justify-content: space-between;
-  margin: 2px;
+  justify-content: start;
+}
+
+.content__video-card-description-container {
+  width: 200px;
 }
 
 .content__video-card-thumbnail {
@@ -153,17 +153,19 @@ ol {
 }
 
 .content__video-card-title {
-  color: #FFF;
+  color: #fff;
   font-family: Oswald, sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
-  color: #FFF;
+  color: #fff;
   font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -179,7 +181,7 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-} 
+}
 
 .search-form__label {
   display: inline;
@@ -200,7 +202,7 @@ ol {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.7);
   padding-left: 0;
 }
 
@@ -229,7 +231,7 @@ ol {
 .button {
   cursor: pointer;
   min-height: 34px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
@@ -260,7 +262,7 @@ ol {
 
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: -3px;
 }
 
 .content__video-card:focus {
@@ -269,29 +271,15 @@ ol {
 
 .content__video-card:focus-visible {
   outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 1px;
 }
 
 .search-form__textfield:focus {
   outline: 0 solid transparent;
-}
-
-/* эктивы */
-
-.search-form__textfield:active {
-  outline: 1px solid #fff;
-}
-
-.button:active {
-  background-color: #545050;
-}
-
-.content__video-card:active {
-  background-color: #545050;
 }
 
 /* ховеры */
@@ -310,4 +298,28 @@ ol {
 
 .search-form__label:hover {
   cursor: pointer;
+}
+
+/* эктивы */
+
+.search-form__textfield:active {
+  outline: 1px solid #fff;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.search-form__label:active > .search-form__pseudo-checkbox {
+  background-color: #fff;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #1b1919;
+  outline: 1px solid #fff;
 }
